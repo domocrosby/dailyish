@@ -4,24 +4,24 @@ about: Suggest an idea for this project
 
 ---
 
-#Use Case
+# Use Case
 
-**Describe what type of user you are**
-As a ...
+_Describe what type of user you are_
+As a 
 
-**Describe the solution you'd like**
-I want ...
+_Describe the solution you'd like_
+I want 
 
-**Describe why you want that**
-So that ...
+_Describe why you want that_
+So that 
 
-**Now describe why you want the above**
-Because ...
+_Now describe why you want the above_
+Because
 
-**Describe why 1 more time**
-Because ...
+_Describe why 1 more time_
+Because 
 
-##Acceptance Criteria
+# Acceptance Criteria
 
-**List everything you would want it to do**
-- [ ]
+_List everything you would want it to do_
+- [ ] I.e. can login using gmail
