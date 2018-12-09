@@ -4,7 +4,7 @@ import Header from './src/components/header';
 export default class App extends React.Component {
   render() {
     return (
-      <Header headerText={'Dailyish'} />
+      <Header headerText={'Dailyish!'} />
     );
   }
 }
