@@ -28,7 +28,8 @@
     },
     "android": {
       "package":"com.upmost.dailish",
-      "versionCode": 2
+      "versionCode": 2,
+      "permissions":[]
     }
   }
 }
