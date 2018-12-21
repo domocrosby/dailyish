@@ -1,10 +1,8 @@
-import React from 'react';
-import Header from './src/components/header';
+import React, { Component } from 'react';
+import AppContainer from './src/config/Routes';
 
-export default class App extends React.Component {
+export default class App extends Component {
   render() {
-    return (
-      <Header headerText={'Dailyish'} />
-    );
+    return <AppContainer />;
   }
 }
