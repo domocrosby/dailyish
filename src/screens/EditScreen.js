@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import HabitList from '../components/HabitList';
 
 export default class DailyScreen extends Component {
   static navigationOptions = {
@@ -8,7 +9,7 @@ export default class DailyScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Edit Screen</Text>
+        <HabitList />
       </View>
     );
   }
