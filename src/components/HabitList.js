@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import TaskEdit from './TaskEdit';
 
 class HabitList extends Component {
   state = { habits: [] };
@@ -9,11 +10,15 @@ class HabitList extends Component {
         .then((response) => response.json())
         .then((responseData) => this.setState({ habits: responseData }));
   }
+  renderAlbums() {
+    return this.state.habits.map(habit =>
+      <TaskEdit key={habit.title} habit={habit} />
+    );
+  }
   render() {
-    console.log(this.state);
     return (
       <View>
-        <Text> List of Habits</Text>
+        {this.renderAlbums()}
       </View>
     );
   }
