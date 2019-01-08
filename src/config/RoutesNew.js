@@ -4,9 +4,11 @@ import {
   createDrawerNavigator,
   createAppContainer,
 } from 'react-navigation';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { Icon } from 'react-native-elements';
 import TodayScreen from '../screens/TodayScreen';
 import HabitsScreen from '../screens/HabitsScreen';
+import { defaultNavigationStyles } from './Styles';
+
 
 const TodayStack = createStackNavigator(
   {
@@ -14,10 +16,11 @@ const TodayStack = createStackNavigator(
     //TodaysEditScreen: { screen: TodaysEditScreen },
   },
   {
+    defaultNavigationOptions: defaultNavigationStyles,
     navigationOptions: {
       drawerLabel: 'Today',
       drawerIcon: ({ tintColor }) => (
-        <MaterialIcons
+        <Icon
           name="today"
           size={24}
           style={{ color: tintColor }}
@@ -32,11 +35,12 @@ const HabitsStack = createStackNavigator(
     Habits: { screen: HabitsScreen },
   },
   {
+    defaultNavigationOptions: defaultNavigationStyles,
     navigationOptions: {
       drawerLabel: 'Habits',
       drawerIcon: ({ tintColor }) => (
-        <MaterialIcons
-          name="loop" 
+        <Icon
+          name="loop"
           size={24}
           style={{ color: tintColor }}
         />
@@ -56,7 +60,6 @@ const appNavigator = createDrawerNavigator(
       screen: HabitsStack,
     },
   },
-
   {
     initialRouteName: 'Habits',
     contentOptions: {
