@@ -1,37 +1,69 @@
-import { createAppContainer, createDrawerNavigator, createStackNavigator } from 'react-navigation';
-//import getSlideFromRightTransition from 'react-navigation-slide-from-right-transition';
+import React from 'react';
+import {
+  createStackNavigator,
+  createDrawerNavigator,
+  createAppContainer,
+} from 'react-navigation';
+import { Icon } from 'react-native-elements';
 import TodayScreen from '../screens/TodayScreen';
 import HabitsScreen from '../screens/HabitsScreen';
-//import TodayEditScreen from '../screens/TodayEditScreen';
 import { defaultNavigationStyles } from './Styles';
 
-//TODO - insert the below as a stack navigator
-// const TodayNavigator = createStackNavigator({
-//   CategoryList: {
-//     screen: CategoryScreen,
-//     navigationOptions: {
-//       title: "Category",
-//       header: // any custom header here
-//     }
-//   },
-// });
-
-const drawerScreens = createDrawerNavigator({
-  TodayScreen: { screen: TodayScreen },
-  HabitsScreen: { screen: HabitsScreen },
-  //TodayScreen: TodayNavigator
-}, {
-  initialRouteName: 'TodayScreen'
-})
-
-const appNavigator = createStackNavigator(
+const TodayStack = createStackNavigator(
   {
-    drawer: { screen: drawerScreens },
+    TodayScreen: { screen: TodayScreen },
+    //TodaysEditScreen: { screen: TodaysEditScreen },
   },
   {
-    initialRouteName: 'drawer',
-    //defaultNavigationOptions: defaultNavigationStyles,
-    //transitionConfig: getSlideFromRightTransition
+    defaultNavigationOptions: defaultNavigationStyles,
+    navigationOptions: {
+      drawerLabel: 'Today',
+      drawerIcon: ({ tintColor }) => (
+        <Icon
+          name="today"
+          size={24}
+          style={{ color: tintColor }}
+        />
+      ),
+    },
+  }
+);
+
+const HabitsStack = createStackNavigator(
+  {
+    Habits: { screen: HabitsScreen },
+  },
+  {
+    defaultNavigationOptions: defaultNavigationStyles,
+    navigationOptions: {
+      drawerLabel: 'Habits',
+      drawerIcon: ({ tintColor }) => (
+        <Icon
+          name="loop"
+          size={24}
+          style={{ color: tintColor }}
+        />
+      ),
+    },
+  }
+);
+
+const appNavigator = createDrawerNavigator(
+  {
+    Today: {
+      path: '/',
+      screen: TodayStack,
+    },
+    Habits: {
+      path: '/habits',
+      screen: HabitsStack,
+    },
+  },
+  {
+    initialRouteName: 'Habits',
+    contentOptions: {
+      activeTintColor: '#e91e63',
+    },
   }
 );
 

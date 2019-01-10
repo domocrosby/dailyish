@@ -1,6 +1,6 @@
 export const colors = {
   darkGreen: '#018786',
-  lightGreen: '#018786'
+  lightGreen: '#03DAC6'
 };
 
 export const defaultNavigationStyles = {

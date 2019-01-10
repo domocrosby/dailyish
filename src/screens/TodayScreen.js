@@ -1,32 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { Icon } from 'react-native-elements';
-import { defaultButton } from '../config/Styles';
+import { View, Text } from 'react-native';
+import { NavButton, DrawerButton } from '../utils/NavUtils';
 
 export default class TodayScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
       title: 'Today',
       headerRight: (
-        <TouchableOpacity
+        <NavButton
           onPress={() => navigation.navigate('TodayEditScreen')}
-          style={defaultButton}
-        >
-          <Icon
-            name={'edit'}
-            color='white'
-          />
-        </TouchableOpacity>
+          icon='edit'
+        />
       ),
       headerLeft: (
-        <TouchableOpacity
-          onPress={() => navigation.openDrawer()}
-          style={defaultButton}
-        >
-          <Icon
-            name={'menu'}
-            color='white'
-          />
-        </TouchableOpacity>
+        <DrawerButton navigation={navigation} />
       )
     });
   render() {

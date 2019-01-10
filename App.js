@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AppContainer from './src/config/RoutesNew';
+import AppContainer from './src/config/Routes';
 
 export default class App extends Component {
   render() {

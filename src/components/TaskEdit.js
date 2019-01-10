@@ -1,13 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const TaskEdit = (props) => {
-  return (
+const TaskEdit = (props) => (
     <View style={styles.containerStyle}>
       <Text style={styles.textStyle}>{props.habit.title}</Text>
     </View>
-  );
-};
+);
 
 const styles = {
   containerStyle: {
